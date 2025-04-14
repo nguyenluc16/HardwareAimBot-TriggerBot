@@ -106,14 +106,14 @@ For more accurate color selection, use the online tool: [HSV Color Picker](https
 
 #### Key Bindings
 
-The key used for both Aimbot and Triggerbot is VK_SHIFT (0x10). Reference: [Virtual-Key Codes](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
+The key used for Aimbot is VK_SHIFT (0x10) and Triggerbot is Alt (0x12). Reference: [Virtual-Key Codes](https://learn.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)
 
 The relevant code snippet is:
 ```python
 while True:
     if win32api.GetAsyncKeyState(0x10) < 0 and self.toggled:
         self.process("move")
-    elif win32api.GetAsyncKeyState(0x10) < 0 and self.toggled:
+    elif win32api.GetAsyncKeyState(0x12) < 0 and self.toggled:
         self.process("click")
 ```
 
