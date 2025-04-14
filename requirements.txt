@@ -1,0 +1,10 @@
+numpy
+mss
+pillow
+termcolor
+pyserial
+requests
+pywin32
+opencv-python
+serial-tool 
+pyautogui
