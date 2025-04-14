@@ -34,6 +34,7 @@ The **Colorbot** project is an automated aiming (aimbot) and shooting (triggerbo
    - If used, solder the 5V and 3.3V power ports on the USB Host Shield for stable operation.
    - Refer to this setup video: [USB Host Shield Setup](https://www.youtube.com/watch?v=nBttwvgNOr8).
 3. **ASCII diagram**
+```
     [PC USB Port]
           |
           |
@@ -48,7 +49,7 @@ The **Colorbot** project is an automated aiming (aimbot) and shooting (triggerbo
           |
           |
     [Mouse]
-
+```
 
 ### 2. Software Setup
 1. **Install Python**:
