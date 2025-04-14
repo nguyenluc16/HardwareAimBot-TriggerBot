@@ -88,6 +88,52 @@ void setup()
   Mouse.begin();
 }
 
+/*Delay simulates user behavior*/
+/*
+void humanMove(signed char dx, signed char dy, signed char wheel) {
+  if (dx == 0 && dy == 0 && wheel == 0) return;
+
+  int steps = max(max(abs(dx), abs(dy)), abs(wheel));
+  float stepX = (float)dx / steps;
+  float stepY = (float)dy / steps;
+  float stepW = (float)wheel / steps;
+
+  for (int i = 0; i < steps; ++i) {
+    signed char jitterX = random(-1, 2);  // ±1
+    signed char jitterY = random(-1, 2);
+    signed char jitterW = random(-1, 2);
+
+    Mouse.move((signed char)(stepX + jitterX),
+               (signed char)(stepY + jitterY),
+               (signed char)(stepW + jitterW));
+
+    delay(random(2, 5));  // delay mô phỏng hành vi người dùng
+  }
+}
+
+void loop()
+{
+  delta[0] = 0;
+  delta[1] = 0;
+  delta[2] = 0;
+
+  Usb.Task();
+
+  if (Serial.available() > 0)
+  {
+    char inChar = Serial.read();
+    if (inChar == 'M') {
+      Serial.readBytes((char *)&delta, 3);  // Đọc đủ 3 byte
+      humanMove(delta[0], delta[1], delta[2]);
+    }
+    else if (inChar == 'C') {
+      Mouse.click();
+    }
+  }
+}
+
+*/
+
 void loop()
 {
   delta[0] = 0;
