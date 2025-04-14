@@ -23,12 +23,21 @@ class Colorant:
         self.toggled = not self.toggled
         time.sleep(0.2)
 
-    def run(self):
+    def run(self):  # Corrected indentation
         while True:
             if win32api.GetAsyncKeyState(0x10) < 0 and self.toggled:
                 self.process("move")
-            elif win32api.GetAsyncKeyState(0x10) < 0 and self.toggled:
+            elif win32api.GetAsyncKeyState(0x12) < 0 and self.toggled:
                 self.process("click")
+                time.sleep(np.random.uniform(0.05, 0.12))
+
+#    @two identical keys
+#    def run(self):
+#        while True:
+#           if win32api.GetAsyncKeyState(0x10) < 0 and self.toggled:
+#               self.process("move")
+#               self.process("click")
+#               time.sleep(np.random.uniform(0.05, 0.15))
 
     def process(self, action):
         screen = self.grabber.get_screen()
