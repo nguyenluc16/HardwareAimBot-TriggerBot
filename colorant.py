@@ -7,11 +7,14 @@ import win32api
 from screen_cap import ScreenCapture
 from mouse import ArduinoMouse
 
+from constants import VK_A, VK_D, ACTIVE_COLOR_LOWER, ACTIVE_COLOR_UPPER, COLORANT_THRESHOLD
+
+
 
 class Colorant:
-    LOWER_COLOR = np.array([140, 110, 150])
-    UPPER_COLOR = np.array([150, 195, 255])
-    THRESHOLD = 60
+    LOWER_COLOR = ACTIVE_COLOR_LOWER
+    UPPER_COLOR = ACTIVE_COLOR_UPPER
+    THRESHOLD = COLORANT_THRESHOLD
 
     def __init__(self, x, y, grabzone):
         self.arduinomouse = ArduinoMouse()
@@ -25,12 +28,8 @@ class Colorant:
 
     def run(self):  # Corrected indentation
         while True:
-            if win32api.GetAsyncKeyState(0x10) < 0 and self.toggled:
+            if win32api.GetAsyncKeyState(VK_A) < 0 and win32api.GetAsyncKeyState(VK_D) < 0 and self.toggled:
                 self.process("move")
-            elif win32api.GetAsyncKeyState(0x12) < 0 and self.toggled:
-                self.process("click")
-                time.sleep(np.random.uniform(0.05, 0.12))
-
 #    @two identical keys
 #    def run(self):
 #        while True:
@@ -55,7 +54,7 @@ class Colorant:
 
         if action == "move":
             cX = x + w // 2
-            cY = y + 9
+            cY = y + 8
             x_diff = cX - self.grabber.grabzone // 2
             y_diff = cY - self.grabber.grabzone // 2
             self.arduinomouse.move(x_diff * 0.2, y_diff * 0.2)

@@ -1,0 +1,4 @@
+1. Cài python-3.13.3-amd64.exe
+2. Chạy file install_requirements.bat
+3. Chỉnh sửa các config theo ý muốn trong constants.py 
+4. Chạy run.bat -> F1 và có hình tròn 

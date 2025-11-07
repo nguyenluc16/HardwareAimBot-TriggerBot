@@ -8,3 +8,7 @@ pywin32
 opencv-python
 serial-tool 
 pyautogui
+keyboard
+pyqt5-tools
+PyQt5
+
